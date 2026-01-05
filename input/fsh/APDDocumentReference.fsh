@@ -1,18 +1,21 @@
 Profile: APDDKDocumentReference
-Parent: MedComMinimalDocumentReference
+Parent: MedComContainedDocumentReference
 Id: apd-dk-documentreference
 Description: "A profile stating the rules, when exchanging a CDA Appointment (APD-DK) document."
-* type from $ApdTypeCode (required) 
+* type = $loinc#56446-8 "Appointment Summary Document"
 //* category.coding.system from $ClassCode (required)
 //* content.attachment.contentType from $ContentType (required)
 //* content.attachment.language from $Language (required)
-* content.format from $ApdFormatCode (required)
-* context.event from $ApdEventCode (required)
+* content.format = $MedComFormatOID#urn:ad:dk:medcom:apd-v2.0.1:full "DK APD schema"
+* context.event from $EventCodeList (required)
 //* context.facilityType from $ApdFacilityType (required)
 //* context.practiceSetting from $ApdPracticeSetting (required)
-* extension.valueCoding from $ApdHomeCommunityID (required)
 * extension.valueString = "1.0.0"
+* content.attachment.contentType = $IANAMediaOID#text/xml "MimeType-text/xml"
 * subject 1..
+* category = $DanishiheOID#001 "Klinisk rapport"
+* extension[homeCommunityid].valueCoding from http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-homeCommunityId-VS
+
 
 
 /* Invariant: apd-dk-rule-1
@@ -22,11 +25,11 @@ Expression: "where(type.coding.where(system = 'http://medcomfhir.dk/ig/xdsmetada
 */
 
 // Metadata instance
-/* Instance: 94e65db8-2f0c-4a2c-a7c9-06a160d59a12
+Instance: 94e65db8-2f0c-4a2c-a7c9-06a160d59a12
 InstanceOf: APDDKDocumentReference
 Title: "Instance of APD-DK DocumentReference."
 Description: "Instance of APD-DK DocumentReference, containing relevant metadata"
-* identifier.value = "urn:uuid:12c2deaf-389a-4f7d-8133-60b24c75cd7e"
+* identifier[entryUUID].value = "urn:uuid:12c2deaf-389a-4f7d-8133-60b24c75cd7e"
 * contained[+] = 42cb9200-f421-4d08-8391-7d51a2503cb4
 * contained[+] = 8fa7df76-bec2-4fe2-9a44-750030a0eda0
 * contained[+] = 37628912-7816-47a3-acd8-396b610be142
@@ -50,10 +53,9 @@ Description: "Instance of APD-DK DocumentReference, containing relevant metadata
 * context.event = $SKSOID#ALAL03 "Psykiske lidelser og adfærdsmæssige forstyrrelser"
 * context.facilityType = $sct#554871000005105 "psykiatrienhed"
 * context.practiceSetting = $sct#394588006 "børne- og ungdomspsykiatri"
-* extension[0].url = "https://medcomfhir.dk/ig/ihexdsmetadata/StructureDefinition/medcom-xds-homecommunityid-extension"
-* extension[0].valueCoding = $DanishxdsOID#1.2.208.176.43210.8.20 "TEST2"
-* extension[1].url = "https://medcomfhir.dk/ig/ihexdsmetadata/StructureDefinition/medcom-xds-version-id-extension"
-* extension[1].valueString = "1.0.0"
+* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
+* context.sourcePatientInfo.identifier.value = "0201919990"
+* context.sourcePatientInfo = Reference(37628912-7816-47a3-acd8-396b610be142)
+* extension[homeCommunityid].valueCoding = $DanishxdsOID#1.2.208.176.8.1 "Common Danish IHE XDS domain. Integrating the Healthcare Enterprise (IHE) cross[X]-enterprise Document Sharing (XDS) domain"
+* extension[versionid].valueString = "1.0.0"
 
-
- */

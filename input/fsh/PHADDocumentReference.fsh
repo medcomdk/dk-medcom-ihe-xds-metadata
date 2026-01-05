@@ -1,21 +1,24 @@
 Profile: PHADDKDocumentReference
-Parent: MedComMinimalDocumentReference
+Parent: MedComContainedDocumentReference
 Id: phad-dk-documentreference
 Description: "A profile stating the rules, when exchanging a CDA Personal Health Attachment Document (PHAD-DK)."
-* type from $PhadTypeCode (required) 
+* type = $loinc#56446-8 "Personal health attachment Document"
 //* category.coding.system from $ClassCode (required)
 //* content.attachment.contentType from $ContentType (required)
 //* content.attachment.language from $Language (required)
-* content.format from $PhadFormatCode (required)
-* context.event from $PhadEventCode (required)
+* content.format = $MedComFormatOID#urn:ad:dk:medcom:phad-v1.0:full "DK CPD schema"
+//* context.event from $PhadEventCode (required)
 //* context.facilityType from $ApdFacilityType (required)
 //* context.practiceSetting from $ApdPracticeSetting (required)
-* extension.valueCoding from $PhadHomeCommunityID (required)
+* extension.valueCoding from http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-homeCommunityId-VS
 * extension.valueString = "1.0.0"
+* content.attachment.contentType = $IANAMediaOID#text/xml "MimeType-text/xml"
 * subject 1..
+* category = $DanishiheOID#001 "Klinisk rapport"
 
 
-/* Invariant: apd-dk-rule-1
+/*
+Invariant: apd-dk-rule-1
 Description: "Where formatCode is 'urn:ad:dk:medcom:appointmentsummary:full', the eventCode must be 'ALAL01' (hjertesygdomme)"
 Severity: #error
 Expression: "where(type.coding.where(system = 'http://medcomfhir.dk/ig/xdsmetadata/CodeSystem/dk-ihe-typecode-de-regenstrief').code = '56446-8').context.event.coding.code = 'ALAL01'"

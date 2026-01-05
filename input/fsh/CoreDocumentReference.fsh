@@ -93,7 +93,6 @@ Description: "General UUID expression"
 Severity: #error
 Expression: "value.matches('[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')"
 
- */
 
 Profile: MedComMinimalDocumentReference // MedComMinimalDocumentReference //OBS: Skal erstattes af afhængighed til DkCore v 3.5.0
 Parent: DkCoreMinimalDocumentReference
@@ -110,8 +109,9 @@ Description: "A replication of DK Core MinimalDocumentReference"
 * subject only Reference(DkCorePatient)
 * context.sourcePatientInfo only Reference(DkCorePatient)
 
+ */
 Profile: MedComContainedDocumentReference
-Parent: MedComMinimalDocumentReference //OBS: Nedarv direkte fra DkCore når den udgives
+Parent: DkCoreMinimalDocumentReference //OBS: Nedarv direkte fra DkCore når den udgives
 Id: medcom-contained-documentreference
 Description: "A profile stating the rules, when exchanging a FHIR document in the Danish Healthcare sector using  IHE MHD and IHE XDS based document sharing."
 * id 1.. MS
@@ -230,6 +230,9 @@ as an author person."
 * context.sourcePatientInfo ^short = "[DocumentEntry.sourcePatientId and DocumentEntry.sourcePatientInfo] Patient demographics from source. Must be the same reference as in DocumentReference.subject."
 * context.sourcePatientInfo only Reference(MedComDocumentPatient)
 * extension MS
+* extension contains 
+    medcom-xds-homecommunityid-extension named homeCommunityid 1..1 MS 
+* extension[homeCommunityid].coding.code
 * extension[versionid] MS
 * extension[versionid] ^short = "Specifies the version of the DocumentReference profile for a standard."
 

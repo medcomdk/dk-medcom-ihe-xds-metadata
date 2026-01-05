@@ -1,12 +1,12 @@
 Profile: HomeCareObservationDocumentReference
-Parent: MedComMinimalDocumentReference
+Parent: MedComContainedDocumentReference
 Id: homecare-observation-documentreference
 Description: "A profile stating the rules, when exchanging a document including homecare observation (DA: Kommunale Prøvesvar)."
-* type from $HcoTypeCode (required) 
-* content.format from $HcoFormatCode (required)
-* context.event from $HcoEventCode (required)
-* extension.valueCoding from $HcoHomeCommunityID (required)
+* type = $loinc#55188-7 "Patient data Document"
+* content.format = $MedComFormatOID#urn:ad:dk:medcom:pdd-v1.0.1:full "DK PDD document"
+* extension.valueCoding from http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-homeCommunityId-VS
 * extension.valueString = "1.1.0"
+* content.attachment.contentType from $FHIRMimetype 
 * subject 1..
 
 
@@ -15,21 +15,20 @@ Instance: 77787891-083a-4d19-9e56-423e7a223e30
 InstanceOf: HomeCareObservationDocumentReference
 Title: "Instance of HomeCareObservation DocumentReference."
 Description: "Instance of HomeCareObservation DocumentReference containing relevant metadata"
-* identifier.value = "urn:uuid:2b18ebb3-0a14-40a4-b1f1-68769cf08cfe"
+* identifier[entryUUID].value = "urn:uuid:2b18ebb3-0a14-40a4-b1f1-68769cf08cfe"
 * contained[+] = 42cb9200-f421-4d08-8391-7d51a2503cb4
 * contained[+] = 8fa7df76-bec2-4fe2-9a44-750030a0eda0
 * contained[+] = 37628912-7816-47a3-acd8-396b610be142
 * masterIdentifier.value = "urn:uuid:fe27d893-6b9e-4e3d-91b0-72d033ce5c07"
 * masterIdentifier.system = "urn:ietf:rfc:3986"
-* identifier.value = "urn:uuid:5941658d-b927-4641-ac6a-52636497063f"
 * status = #current "Current"
 * type = $loinc#55188-7 "Patient data Document" // Danish XDS typecode must be updated
 * authenticator = Reference(42cb9200-f421-4d08-8391-7d51a2503cb4)
 * category = $DanishiheOID#001 "Klinisk rapport"
-* securityLabel = #N
+* securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * author = Reference(8fa7df76-bec2-4fe2-9a44-750030a0eda0)
 * subject = Reference(37628912-7816-47a3-acd8-396b610be142)
-* content.attachment.contentType = $IANAMediaOID#text/xml "MimeType-text/xml"
+* content.attachment.contentType = $IANAMediaOID#application/fhir+xml "MimeType-application/fhir+xml"
 * content.attachment.language = $IANALanguageOID#da "Danish"
 * content.attachment.creation = "2023-09-08T13:28:17+01:00" 
 * content.attachment.hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
@@ -37,12 +36,9 @@ Description: "Instance of HomeCareObservation DocumentReference containing relev
 * content.attachment.url = "DOC001.XML"
 * content.attachment.title = "Kommunale prøvesvar for 0201919990"
 * content.format = $MedComFormatOID#urn:ad:dk:medcom:pdd-v1.0.1:full "DK PDD document" // Danish XDS typecode must be updated
-* context.event = $SKSOID#ALAL02 "Hjertesygdomme" // Danish XDS typecode must be updated
 * context.facilityType = $sct#550621000005101 "hjemmesygeplejeenhed" // Danish XDS typecode must be updated
 * context.practiceSetting = $sct#658161000005107 "hjemmesygepleje" // Danish XDS typecode must be updated
 * context.sourcePatientInfo.identifier.value = "0201919990"
 * context.sourcePatientInfo = Reference(37628912-7816-47a3-acd8-396b610be142)
-* extension[+].url = "http://medcomfhir.dk/ig/document/StructureDefinition/medcom-document-homecommunityid-extension"
-* extension[=].valueCoding = $DanishxdsOID#1.2.208.176.8.1 "Common Danish IHE XDS domain. Integrating the Healthcare Enterprise (IHE) cross[X]-enterprise Document Sharing (XDS) domain"
-* extension[versionid].url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.version"
+* extension[homeCommunityid].valueCoding = $DanishxdsOID#1.2.208.176.8.1 "Common Danish IHE XDS domain. Integrating the Healthcare Enterprise (IHE) cross[X]-enterprise Document Sharing (XDS) domain"
 * extension[versionid].valueString = "1.1.0"

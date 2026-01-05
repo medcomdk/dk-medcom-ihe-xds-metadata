@@ -1,5 +1,5 @@
-Profile: QRDDKDocumentReference
-Parent: MedComMinimalDocumentReference
+/* Profile: QRDDKDocumentReference
+Parent: MedComContainedDocumentReference
 Id: qrd-dk-documentreference
 Description: "A profile stating the rules, when exchanging a CDA Questionnaire Response Document (QRD-DK)."
 * type.coding from $QrdTypeCode (required) 
@@ -18,7 +18,7 @@ Description: "A profile stating the rules, when exchanging a CDA Questionnaire R
 
 
 
-/* Invariant: apd-dk-rule-1
+Invariant: apd-dk-rule-1
 Description: "Where formatCode is 'urn:ad:dk:medcom:appointmentsummary:full', the eventCode must be 'ALAL01' (hjertesygdomme)"
 Severity: #error
 Expression: "where(type.coding.where(system = 'http://medcomfhir.dk/ig/xdsmetadata/CodeSystem/dk-ihe-typecode-de-regenstrief').code = '56446-8').context.event.coding.code = 'ALAL01'"

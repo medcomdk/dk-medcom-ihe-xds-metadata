@@ -2,19 +2,14 @@ Profile: MedComConditionListDocumentReference
 Parent: MedComContainedDocumentReference
 Id: medcom-conditionlist-documentreference
 Description: "A profile for the MedCom ConditionListDocumentReference resource."
-* type.coding.system = $loinc (exactly) //RCH: OBS: Disse linjer er også kopieret til Composition.
-* type.coding.code = #11450-4 (exactly)
-* type.coding.display = "Problem list - Reported" (exactly) 
-* content.format.system = $MedComFormatOID (exactly)
-* content.format.code = #urn:ad:dk:medcom:plr-v1.0:full (exactly) 
-* content.format.display = "DK PLR schema" (exactly)
-//* content.attachment.contentType from $PlrContentType
-//* context.event from $PcaEventCode (required)
-//* context.facilityType from $ApdFacilityType (required)
-//* context.practiceSetting from $ApdPracticeSetting (required)
-//* extension[homeCommunityid].valueCoding from http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-homeCommunityId-VS (required)
+* type = $loinc#11450-4 "Problem list - Reported" 
+* content.format = $MedComFormatOID#urn:ad:dk:medcom:plr-v1.0:full "DK PLR schema"
+* category = $DanishiheOID#001 "Klinisk rapport"
+* extension[homeCommunityid].valueCoding from http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-homeCommunityId-VS
 * extension[versionid].valueString = "1.0.0"
 * subject 1..
+* content.attachment.contentType from $FHIRMimetype 
+
 
 // Metadata instance
 Instance: 4daf727f-f116-4e49-ad31-4018f0cc638a
@@ -44,9 +39,7 @@ Description: "DocumentReference instance"
 * context.practiceSetting = $sct#408443003 "almen medicin"
 * context.sourcePatientInfo = Reference(69e475df-20c8-4f54-8cea-9843568205fd)
 * context.sourcePatientInfo.identifier.value = "2509479989"
-* extension[+].url = "http://medcomfhir.dk/ig/document/StructureDefinition/medcom-document-homecommunityid-extension"
-* extension[=].valueCoding = $DanishxdsOID#1.2.208.176.8.1 "Common Danish IHE XDS domain. Integrating the Healthcare Enterprise (IHE) cross[X]-enterprise Document Sharing (XDS) domain"
-* extension[versionid].url = "http://hl7.org/fhir/5.0/StructureDefinition/extension-DocumentReference.version"
+* extension[homeCommunityid].valueCoding = $DanishxdsOID#1.2.208.176.8.1 "Common Danish IHE XDS domain. Integrating the Healthcare Enterprise (IHE) cross[X]-enterprise Document Sharing (XDS) domain"
 * extension[versionid].valueString = "1.0.0"
 
 Instance: fd3206c6-c265-49f9-82c3-8b4c96280403

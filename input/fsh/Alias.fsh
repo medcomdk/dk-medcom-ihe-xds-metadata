@@ -6,7 +6,8 @@ Alias: $loinc = http://loinc.org
 Alias: $MedComFormatOID = urn:oid:1.2.208.184.100.10
 Alias: $sct = http://snomed.info/sct|http://snomed.info/sct/554471000005108 // Danish version - append e.g. /version/20240331 to get a more specific version 
 Alias: $TypeCode =  http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-typecode-VS
-
+Alias: $FHIRMimetype = http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-ihe-core-mimetype-fhir-VS
+Alias: $EventCodeList = http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-dk-ihe-episodepfcare-eventcodelist-VS
 
 Alias: $QrdTypeCode = http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-dk-ihe-qrd-typecode-VS
 Alias: $QrdEventCode = http://medcomfhir.dk/ig/xdsmetadata/ValueSet/MedCom-dk-ihe-qrd-eventcodelist-VS
