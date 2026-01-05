@@ -12,7 +12,7 @@ Description: "A profile stating the rules, when exchanging a document including 
 
 // Metadata instance
 Instance: 77787891-083a-4d19-9e56-423e7a223e30
-InstanceOf: HomeCareObservationDocumentReference
+InstanceOf: MedComContainedDocumentReference
 Title: "Instance of HomeCareObservation DocumentReference."
 Description: "Instance of HomeCareObservation DocumentReference containing relevant metadata"
 * identifier[entryUUID].value = "urn:uuid:2b18ebb3-0a14-40a4-b1f1-68769cf08cfe"

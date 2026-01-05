@@ -13,10 +13,11 @@ Description: "A profile stating the rules, when exchanging a CDA Questionnaire R
 //* context.practiceSetting.coding.system from $QrdPracticeSetting (required)
 * extension.valueCoding from $QrdHomeCommunityID (required)
 * extension.valueString = "1.0.0"
+*/
 
 
 
-
+/*
 
 Invariant: apd-dk-rule-1
 Description: "Where formatCode is 'urn:ad:dk:medcom:appointmentsummary:full', the eventCode must be 'ALAL01' (hjertesygdomme)"

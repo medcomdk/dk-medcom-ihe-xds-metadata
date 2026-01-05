@@ -5,6 +5,8 @@ Description: "Instance of a XDS document bundled  author person"
 Usage: #example
 * name.given = "Sidsel"
 * name.family = "Andersen"
+* identifier.system = "urn:uuid"
+* identifier.value = "a44e15b8-ac64-46d7-9f0d-c64015d4f370"
 
 Instance: 8fa7df76-bec2-4fe2-9a44-750030a0eda0
 InstanceOf: MedComDocumentOrganization

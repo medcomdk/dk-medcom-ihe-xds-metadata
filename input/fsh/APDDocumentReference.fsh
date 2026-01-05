@@ -1,3 +1,4 @@
+/*
 Profile: APDDKDocumentReference
 Parent: MedComContainedDocumentReference
 Id: apd-dk-documentreference
@@ -24,6 +25,7 @@ Severity: #error
 Expression: "where(type.coding.where(system = 'http://medcomfhir.dk/ig/xdsmetadata/CodeSystem/dk-ihe-typecode-de-regenstrief').code = '56446-8').context.event.coding.code = 'ALAL01'"
 */
 
+/*
 // Metadata instance
 Instance: 94e65db8-2f0c-4a2c-a7c9-06a160d59a12
 InstanceOf: APDDKDocumentReference
