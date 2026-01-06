@@ -31,7 +31,7 @@ Description: "DocumentReference instance"
 * content.attachment.contentType = $IANAMediaOID#application/fhir+json "MimeType-application/fhir+json"
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = $IANALanguageOID#da "Danish"
-* content.attachment.creation = "2024-05-01T12:00:00+01:00"
+* content.attachment.creation = "2024-05-01T12:00:00Z"
 * content.attachment.url = "DOC001.XML"
 * content.attachment.title = "Elektrokardiogram-12-aflednings"
 * content.format = $MedComFormatOID#urn:ad:dk:medcom:ekg-v1.0:full "DK EKG schema"

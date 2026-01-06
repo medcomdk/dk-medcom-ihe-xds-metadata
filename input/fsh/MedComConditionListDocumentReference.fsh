@@ -31,7 +31,7 @@ Description: "DocumentReference instance"
 * content.attachment.contentType = $IANAMediaOID#application/fhir+json "MimeType-application/fhir+json"
 * securityLabel = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N
 * content.attachment.language = $IANALanguageOID#da "Danish"
-* content.attachment.creation = "2024-05-01T12:00:00+01:00"
+* content.attachment.creation = "2024-05-01T12:00:00Z"
 * content.attachment.url = "DOC001.XML"
 * content.attachment.title = "Diagnoseoversigt for 2509479989"
 * content.format = $MedComFormatOID#urn:ad:dk:medcom:plr-v1.0:full "DK PLR schema"
@@ -61,6 +61,9 @@ Description: "Practitioner instance - 1st ConditionList"
 * name.family = "Vestergaard"
 * name.given[0] = "Bo"
 * name.given[1] = "Test"
+* identifier.value = "urn:uuid:2ecad31f-8967-4f49-b6af-7e64082e8fec"
+* identifier.system = "urn:ietf:rfc:3986"
+
 
 Instance: 69e475df-20c8-4f54-8cea-9843568205fd
 InstanceOf: MedComDocumentPatient

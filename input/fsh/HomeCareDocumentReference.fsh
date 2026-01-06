@@ -30,7 +30,7 @@ Description: "Instance of HomeCareObservation DocumentReference containing relev
 * subject = Reference(37628912-7816-47a3-acd8-396b610be142)
 * content.attachment.contentType = $IANAMediaOID#application/fhir+xml "MimeType-application/fhir+xml"
 * content.attachment.language = $IANALanguageOID#da "Danish"
-* content.attachment.creation = "2023-09-08T13:28:17+01:00" 
+* content.attachment.creation = "2023-09-08T13:28:17Z" 
 * content.attachment.hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 * content.attachment.size = 3654
 * content.attachment.url = "DOC001.XML"
